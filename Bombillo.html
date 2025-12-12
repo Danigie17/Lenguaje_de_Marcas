@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Domótica</title>
+
+        <meta charset="utf-8">
+
+        <style>
+
+            body> div {
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                height:90vh;
+            }
+
+            div div {
+                margin:1em;
+            }
+
+            button {
+                width:100px;
+                height:50px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div>
+            <div>
+                <img id="bombilla" src="http://lnd.angelmelchor.pro/bulboff.gif" >
+            </div>
+            <div>
+                <button id="bon" onclick="enciende()">On</button>
+            </div>
+            <div>
+                <button id="boff" onclick="apaga()">Off</button>
+            </div>
+        </div>
+        <script>
+            const ele_bombilla=document.getElementById("bombilla");
+            const bon = document.getElementById("bon");
+            const boff = document.getElementById("boff");
+            function enciende(){
+                ele_bombilla.src="http://lnd.angelmelchor.pro/bulbon.gif";
+                bon.style.backgroundColor="green";
+                bon.style.color="white";
+                boff.style.backgroundColor="lightgray";
+                boff.style.color="black";
+            }
+            function apaga(){
+                ele_bombilla.src="http://lnd.angelmelchor.pro/bulboff.gif";
+                bon.style.backgroundColor="lightgray";
+                bon.style.color="black";
+                boff.style.backgroundColor="red";6
+                boff.style.color="white";
+            }
+        </script>
+    </body>
+</html>

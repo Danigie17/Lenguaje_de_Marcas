@@ -1,0 +1,107 @@
+<html>
+
+    <head>
+
+        <title>Salpicadero</title>
+
+        <meta charset="utf-8">
+
+        <style>
+            body {
+                display:flex;
+                height:90vh;
+                background-color:lightyellow;
+                justify-content:center;
+                align-items:center;
+            }
+
+            #externo {
+                border: 3px solid red;
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows:1fr 1fr 1fr;
+                justify-content:space-evenly;
+                padding-bottom:0.5em;
+                width:50vw;
+
+            }
+
+            #rpm {
+                grid-column-start:2;
+                grid-row-start:2;
+            }
+
+            #vel {
+                grid-column-start:1;
+                grid-row-start:2;
+            }
+
+            #fueltemp {
+                display:flex;
+                width:100px;
+                padding-left:1em;
+                padding-right:1em;
+                justify-content:space-between;
+                grid-row-start:span 2;
+            }
+
+            #dcha {
+                grid-column-start:2;
+                grid-row-start:1;
+                display:flex;
+            }
+
+            #izqda {
+                grid-column-start:1;
+                grid-row-start:1;
+                display:flex;
+                justify-content:right;
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+
+        <div id="externo">
+
+            <div id="rpm">
+
+                <img src="/enunciados/rpm.jpg">
+
+            </div>
+
+            <div id="fueltemp">
+
+                <img src="/enunciados/fuel.jpg">
+
+                <img src="/enunciados/bmw.png">
+
+                <img src="/enunciados/temp.jpg">
+
+            </div>
+
+            <div id="vel">
+
+                <img src="/enunciados/kmh.jpg">
+
+            </div>
+
+            <div id="dcha">
+
+                <img class="intermitente" src="/enunciados/derecha.jpg">
+
+            </div>
+
+            <div id="izqda">
+
+                <img class="intermitente" src="/enunciados/izquierda.jpg">
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

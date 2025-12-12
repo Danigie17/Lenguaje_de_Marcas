@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Grid</title>
+        <meta charset="utf-8">
+        <style>
+           p, a {
+                border:1px solid black;
+                margin:0;
+            }
+            .principal {
+                display:grid;
+                grid-template-columns: auto auto auto;
+                border:1px solid navy;
+                align-items: center;
+            }
+            div {
+                border: 1px dotted blue;
+                text-align: center;
+            }
+            .principal > div:nth-of-type(4) {
+                grid-row-start: 1;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="principal">
+            <div>
+                <p>Párrafo1</p>
+            </div>
+            <div>
+                <a>Elemento a1</a>
+            </div>
+            <div> 
+                <a>Elemento a2</a>
+            </div>
+            <div id="foto">
+                <img src="http://lnd.angelmelchor.pro/tiny.jpg">
+            </div>
+            <div>
+                <p>Párrafo2</p>
+            </div>
+        </div>
+    </body>
+</html>
