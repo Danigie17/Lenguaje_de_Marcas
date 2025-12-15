@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Número</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                height: 90vh;
+                width:80vw;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            button {
+                border: 2px solid black;
+                padding: 10px;
+                background-color: rgb(158, 245, 245);
+            }
+            button:hover {
+                background-color: rgb(72, 255, 0);
+            }
+            p {
+                border: 3px solid black;
+                font-size: 3em;
+                padding: 20px;
+                margin: 0;
+                width: 80%;
+                text-align: center;
+                background-color: antiquewhite;
+            }
+            div {
+                border: 1px solid navy;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                width: 50%;
+                height: 80%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button id="botón" onclick="pulsar()">¡Gira el bombo!</button>
+            <p id="resultado"></p>
+        </div>
+        <script>
+            const ele_p = document.getElementById("resultado"); 
+            function pulsar(){
+                const numero = Math.ceil(Math.random()*100000);
+                ele_p.innerText = numero;
+            }
+        </script>
+    </body>
+</html>
