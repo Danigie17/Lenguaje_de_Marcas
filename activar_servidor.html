@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Activar Servidor</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="http://10.109.99.171:8080/rpc/Switch.Set">
+                <input type="hidden" name="id" value="0">
+                <label id="Encendido">On</label>
+                <input type="radio" name="on" value="true">
+                <label id="Apagado">Off</label>
+                <input type="radio" name="on" value="false">
+                <br>
+                <input type="submit" value="Enviar">
+        </form>
+    </body>
+    <script>
+        for (let i=1;i<11;++i) {
+            console.log(i)
+            if (i == 5) {
+                console.log("Llegué a 5")
+            }
+        }
+    </script> 
+</html>
