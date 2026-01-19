@@ -1,17 +1,33 @@
+<?xml version ="1.0" encoding="utf-8"?>
 <agenda>
     <recordatorio>
         <fecha>12/1/26</fecha>
         <hora>10.30</hora>
         <evento>médico</evento>
+        <detalles>
+            <ubicación>calle aaaaaaaaa</ubicación>
+            <codigo_postal>38107</codigo_postal>
+            <extra>pedir nueva receta</extra>
+        </detalles>
     </recordatorio>
     <recordatorio>
         <fecha>15/3/26</fecha>
         <hora>6.15</hora>
         <evento>vuelo</evento>
+        <detalles>
+            <ubicación>calle bbbbbbbbb</ubicación>
+            <codigo_postal>38108</codigo_postal>
+            <extra>pesar maleta antes de salir</extra>
+        </detalles>
     </recordatorio>
     <recordatorio>
         <fecha>28/11/26</fecha>
         <hora>22.00</hora>
         <evento>festival</evento>
+        <detalles>
+            <ubicación>calle ccccccccccccccc</ubicación>
+            <codigo_postal>38109</codigo_postal>
+            <extra>ponerse crema solar</extra>
+        </detalles>
     </recordatorio>
 </agenda>
