@@ -1,0 +1,17 @@
+<agenda>
+    <recordatorio>
+        <fecha>12/1/26</fecha>
+        <hora>10.30</hora>
+        <evento>médico</evento>
+    </recordatorio>
+    <recordatorio>
+        <fecha>15/3/26</fecha>
+        <hora>6.15</hora>
+        <evento>vuelo</evento>
+    </recordatorio>
+    <recordatorio>
+        <fecha>28/11/26</fecha>
+        <hora>22.00</hora>
+        <evento>festival</evento>
+    </recordatorio>
+</agenda>
