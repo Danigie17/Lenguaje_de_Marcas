@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Domótica</title>
+    <meta charset="utf-8" />
+    <style>
+      body > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+      div div {
+        margin: 1em;
+        text-align: center;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div>
+        <img id="bombilla" src="http://lnd.angelmelchor.pro/bulboff.gif" />
+      </div>
+      <div>
+        <button id="boton" onclick="conmutar()">On</button>
+      </div>
+      <div>
+        <button id="apagado" onclick="apagar()">Off</button>
+      </div>
+    </div>
+    <script>
+      const ele_bombilla = document.getElementById("bombilla");
+      const boton = document.getElementById("boton");
+      const boff = document.getElementById("apagado");
+      const ele_h3 = document.createElement("h3");
+      ele_bombilla.insertAdjacentElement("afterend", ele_h3);
+      let encendida = false;
+      boff.style.visibility = "hidden";
+      function conmutar() {
+        const fecha = new Date();
+        const horas = fecha.getHours();
+        const minutos = fecha.getMinutes();
+        const segundos = fecha.getSeconds();
+        if (encendida) {
+          ele_bombilla.src = "http://lnd.angelmelchor.pro/bulboff.gif";
+          boton.style.backgroundColor = "red";
+          boton.style.color = "white";
+          encendida = false;
+          boton.innerText = "On";
+          mensaje =
+            "Bombilla apagada a las " + horas + ":" + minutos + ":" + segundos;
+          ele_h3.innerText = mensaje;
+        } else {
+          ele_bombilla.src = "http://lnd.angelmelchor.pro/bulbon.gif";
+          boton.style.backgroundColor = "green";
+          boton.style.color = "white";
+          encendida = true;
+          boton.innerText = "Off";
+          mensaje =
+            "Bombilla encendida a las " +
+            horas +
+            ":" +
+            minutos +
+            ":" +
+            segundos;
+          ele_h3.innerText = mensaje;
+        }
+      }
+    </script>
+  </body>
+</html>
