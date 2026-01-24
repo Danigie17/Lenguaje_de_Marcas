@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <body>
+    <p id="numeros"></p>
+
+    <script>
+      let mensaje = document.getElementById("numeros");
+      for (let num = 1; num < 6; ++num) {
+        if (num == 5) {
+          mensaje.innerText += " " + num + ".";
+        } else {
+          mensaje.innerText += " " + num + ", ";
+        }
+      }
+    </script>
+  </body>
+</html>

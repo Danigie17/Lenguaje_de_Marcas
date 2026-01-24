@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bombilla</title>
+  </head>
+  <body>
+    <img id="bombilla" src="http://lnd.angelmelchor.pro/bulboff.gif" />
+    <button onclick="conmutar()">On / Off</button>
+    <p id="info"></p>
+
+    <script>
+      let contador = 0;
+      const ele_bombilla = document.getElementById("bombilla");
+      const display = document.getElementById("info");
+      let encendida = false;
+      function conmutar() {
+        contador++;
+        if (encendida) {
+          ele_bombilla.src = "http://lnd.angelmelchor.pro/bulboff.gif";
+          encendida = false;
+          display.innerText = "Botón pulsado " + contador + " vez/veces.";
+        } else {
+          ele_bombilla.src = "http://lnd.angelmelchor.pro/bulbon.gif";
+          encendida = true;
+          display.innerText = "Botón pulsado " + contador + " vez/veces.";
+        }
+      }
+    </script>
+  </body>
+</html>
