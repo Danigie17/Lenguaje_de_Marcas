@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio bucle for</title>
+  </head>
+  <body>
+    <h1>Ejercicio: Bucle for</h1>
+
+    <button onclick="mostrarNumeros()">Mostrar números</button>
+
+    <ul id="lista">
+      <!-- Aquí se añadirán los números -->
+    </ul>
+
+    <script>
+      function mostrarNumeros() {
+        const lista = document.getElementById("lista");
+        lista.innerHTML = ""; // Limpia la lista antes de empezar
+        for (let num = 1; num < 11; num++) {
+          let ele_li = document.createElement("li");
+          ele_li.innerText = num;
+          if (num % 2 === 0) {
+            ele_li.style.color = "blue";
+          } else {
+            ele_li.style.color = "red";
+          }
+          lista.appendChild(ele_li);
+        }
+      }
+    </script>
+  </body>
+</html>
