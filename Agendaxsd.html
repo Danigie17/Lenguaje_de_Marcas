@@ -1,0 +1,58 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--Tipos de datos simples retrigidos-->
+    <xsd:simpleType name="tipoTelefono">
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="(\+[0-9]{9})?[6-9][0-9]{8}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoNombre">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-ZÀÈÌÒÙÑ][a-záéíóúñ]*(\s[A-ZÀÈÌÒÙÑ][a-záéíóúñ]*)(0,2)*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoCorreo">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*@[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*"/> <!--(http)?[s]*(://)?[a-z0-9_-]*\.[a-z0-9._-]-->
+        </xsd:restriction>
+    </xsd:simpleType>
+<!--Tipos Complejo-->
+    <precio moneda="EUR">23.50</precio><!--TipoComplejo porque tiene contenido-->
+    <xsd:complexType name="tipoPrecio">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:decimal"><!--Define el tipo del contenido "23.50"-->
+            <xsd:attribute name="moneda" type="tipoMoneda" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <imagen src="string"/> <!--Elemento Vacío tipoComplejo-->
+    <xsd:complexType name="tipoImagen">
+        <xsd:attribute name="src" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    <xsd:complexTipe name="tipoDato"><!--definimos el tipo-->
+        <xsd:sequence><!--Definimos solo el que tiene hijos de tipo-->
+            <xsd:element name="nombre" type="xsd:tipoNombre"/>
+            <xsd:element name="telefono" type="xsd:integer" maxOccurs="2"/>
+        </xsd:sequence>
+    </xsd:complexTipe>
+    <xsd:complexTipe name="tipoContacto"><!--definimos el tipo-->
+        <xsd:sequence><!--Definimos solo el que tiene hijos de tipoAgenda-->
+            <xsd:element name="nombre" type="xsd:tipoNombre"/>
+            <xsd:element name="apellido1" type="xsd:tipoNombre"/>
+            <xsd:element name="apellido2" type="xsd:tipoNombre"/>
+            <xsd:element name="direccion" type="xsd:string"/>
+            <xsd:element name="telefono" type="xsd:integer" maxOccurs="2"/>
+            <xsd:element name="email" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="fechanacimiento" type="xsd:date"/>
+            <xsd:element name="provincia" type="xsd:string"/>
+            <xsd:element name="dato" type="tipoDato" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexTipe>
+    <xsd:complexTipe name="tipoAgenda"><!--definimos el tipo-->
+        <xsd:sequence><!--Definimos solo el que tiene hijos de tipoAgenda-->
+            <xsd:element name="contancto" type="tipoContacto" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence> 
+    </xsd:complexTipe>
+    
+<!--Elemento Raíz-->
+<xsd:element name="agenda" type="tipoAgenda"/>
+</xsd:schema>

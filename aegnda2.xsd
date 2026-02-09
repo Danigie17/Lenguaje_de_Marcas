@@ -14,7 +14,9 @@
             <xsd:element name="telefono" type="tipoTelefono" maxOccurs="2"/>
             <!-- Tipo Simple-->
              <xsd:simpleType name="tipoTelefono">
-                <xsd:restriction base="xsd:integer"/>
+                <xsd:restriction base="xsd:integer">
+                    <xsd:pattern value ="[0-9]{9}"/>
+                </xsd:restriction>
              </xsd:simpleType>
             <xsd:element name="correo" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
