@@ -1,5 +1,5 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<!--Tipos de datos simples retrigidos-->
+<!--Tipos de datos simples restrigidos-->
     <xsd:simpleType name="tipoTelefono">
         <xsd:restriction base="xsd:integer">
             <xsd:pattern value="(\+[0-9]{9})?[6-9][0-9]{8}"/>
@@ -11,16 +11,16 @@
         </xsd:restriction>
     </xsd:simpleType>
     <xsd:simpleType name="tipoCorreo">
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*@[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*"/> <!--(http)?[s]*(://)?[a-z0-9_-]*\.[a-z0-9._-]-->
+        <xsd:restriction base="xsd:string">                                                              <!--Patrón para URLs-->
+            <xsd:pattern value="[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*@[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*"/> <!--http[s]*://[a-zA-Z]+((\.[a-zA-Z]+)*[a-zA-Z0-9_-]*)*(/[a-zA-Z0-9_\.\?#6-]*)*-->
         </xsd:restriction>
     </xsd:simpleType>
-<!--Tipos Complejo-->
+<!--Tipos Complejos-->
     <precio moneda="EUR">23.50</precio><!--TipoComplejo porque tiene contenido-->
     <xsd:complexType name="tipoPrecio">
         <xsd:simpleContent>
             <xsd:extension base="xsd:decimal"><!--Define el tipo del contenido "23.50"-->
-            <xsd:attribute name="moneda" type="tipoMoneda" use="required"/>
+                <xsd:attribute name="moneda" type="tipoMoneda" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
