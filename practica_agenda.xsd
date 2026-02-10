@@ -17,6 +17,8 @@
             <xsd:extension base="xsd:string">
                 <xsd:attribute name="uso" type="xsd:tipoUso" use="required"/>
             </xsd:extension>
+        </xsd:simpleContent>
+        <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute name="tipo" type="xsd:tipoTipo"/>
             </xsd:extension>
