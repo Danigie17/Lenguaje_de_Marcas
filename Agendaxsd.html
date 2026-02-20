@@ -16,22 +16,22 @@
         </xsd:restriction>
     </xsd:simpleType>
 <!--Tipos Complejos-->
-    <precio moneda="EUR">23.50</precio><!--TipoComplejo porque tiene contenido-->
+    <!--<precio moneda="EUR">23.50</precio TipoComplejo porque tiene contenido
     <xsd:complexType name="tipoPrecio">
         <xsd:simpleContent>
-            <xsd:extension base="xsd:decimal"><!--Define el tipo del contenido "23.50"-->
+            <xsd:extension base="xsd:decimal"> Define el tipo del contenido "23.50"
                 <xsd:attribute name="moneda" type="tipoMoneda" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    <imagen src="string"/> <!--Elemento Vacío tipoComplejo-->
+    <imagen src="string"/> Elemento Vacío tipoComplejo-->
     <xsd:complexType name="tipoImagen">
         <xsd:attribute name="src" type="xsd:string" use="required"/>
     </xsd:complexType>
     <xsd:complexTipe name="tipoDato"><!--definimos el tipo-->
         <xsd:sequence><!--Definimos solo el que tiene hijos de tipo-->
             <xsd:element name="nombre" type="xsd:tipoNombre"/>
-            <xsd:element name="telefono" type="xsd:integer" maxOccurs="2"/>
+            <xsd:element name="telefono" type="xsd:tipoTelefono" maxOccurs="2"/>
         </xsd:sequence>
     </xsd:complexTipe>
     <xsd:complexTipe name="tipoContacto"><!--definimos el tipo-->
