@@ -1,0 +1,82 @@
+<!--• Empleando código Javascript crea 9 imágenes idénticas que consistan en un círculo cuya URL es
+    /enunciados/circle.svg. Los círculos deben crearse automáticamente al cargar la página 
+    TIP: Utiliza un bucle para crear los círculos y ve añadiéndolos a una lista global.
+    Fíjate que el div "dado" es ya un contenedor Grid de 3x3=> Puedes ir añadiendo elementos al div que se irán ordenando automáticamente. 
+    El resultado final debe ser igual a:
+
+    • Modifica el código para ocultar el círculo al hacer clic sobre él. TIP: puntos[i].onclick=()=>oculta(i); 
+    Esto crea el atributo onclick con el valor oculta(i) para el elemento puntos[i]. Recuerda que para ocultar un elemento sin eliminar su espacio se usa la propiedad 
+    style.visibility="hidden"
+    • Modifica el código anterior para incluir la funcionalidad de hacer visibles todos los círculos cuando se haga click en el último círculo visible. 
+    TIP: Crea el atributo onclick en el div "dado" para llamar a una función que compruebe si existe todavía alguno visible. 
+    Para hacer visible style.visibility="visible". El funcionamiento es como se muestra en el vídeo siguiente:-->
+
+<html>
+  <head>
+    <title>Roll the Dice</title>
+
+    <meta charset="utf-8" />
+
+    <style>
+      #externo {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        box-sizing: border-box;
+
+        height: 100%;
+
+        border: 1px solid navy;
+      }
+
+      #dado {
+        display: grid;
+
+        width: 30vw;
+
+        height: 30vw;
+
+        border: 5px solid red;
+
+        grid-template-columns: 1fr 1fr 1fr;
+
+        grid-template-rows: 1fr 1fr 1fr;
+      }
+
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="externo">
+      <div id="dado"></div>
+    </div>
+    <script>
+      const ele_dado = document.getElementById("dado");
+      let lista = [];
+      let counter = 0;
+      for (let i = 1; i <= 9; i++) {
+        const imagen = document.createElement("img");
+        imagen.src = "/enunciados/circle.svg";
+        lista[i] = imagen;
+        ele_dado.insertAdjacentElement("afterbegin", lista[i]);
+        lista[i].onclick = () => ocultar(i);
+      }
+      function ocultar(i) {
+        lista[i].style.visibility = "hidden";
+        counter++;
+        if (counter >= 9) {
+          for (i = 1; i <= 9; i++) {
+            lista[i].style.visibility = "visible";
+          }
+          counter = 0;
+        }
+      }
+    </script>
+  </body>
+</html>

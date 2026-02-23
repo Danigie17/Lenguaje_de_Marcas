@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio Bucles For Anidados</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #resultado {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Generador de Patrón</h1>
+
+    <button onclick="generarPatron()">Generar patrón</button>
+
+    <div id="resultado"></div>
+
+    <script>
+      const contenedor = document.getElementById("resultado");
+      let resultado = "";
+      function generarPatron() {
+        for (let i = 1; i <= 5; i++) {
+          for (let j = 1; j <= i; j++) {
+            const symbol = "*";
+            resultado += symbol;
+          }
+          resultado += "<br>";
+        }
+        contenedor.innerHTML = resultado;
+      }
+    </script>
+  </body>
+</html>
