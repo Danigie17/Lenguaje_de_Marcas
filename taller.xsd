@@ -1,0 +1,81 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--Tipos Simples-->
+    <xsd:simpleType name="tipoFecha">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="([0-2][0-9]|3[0-1]-(0[1-9]|1[0-2])-2[0-9]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoYear">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1900"/>
+            <xsd:maxInclusive value="2099"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+        <xsd:simpleType name="tipoKm">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="1000000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoPais">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[A-Z]{2}"/>
+    </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoNombre">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Za-záéíóúñÑ]"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+<!--Tipos Complejos-->
+<xsd:complexType name="tipoDireccion">
+    <xsd:sequence>
+        <xsd:element name="nombreVia" type="xsd:string"/>
+        <xsd:element name="numero" type="tipoNumero"/>
+        <xsd:element name="municipio" type="tipoMunicipio"/>
+        <xsd:element name="provincia" type="tipoProvincia"/>
+    </xsd:sequence>
+</xsd:complexType>
+    <xsd:complexType name="tipoPropietario">
+        <xsd:sequence>
+            <xsd:element name="nombre" type="tipoNombre"/>
+            <xsd:element name="direccion" type="tipoDireccion"/>
+            <xsd:element name="contacto" type="tipoContacto"/>
+        </xsd:sequence>
+        <xsd:attribute name="empresa" type="xsd:boolean" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="tipoMatricula">
+        <xsd:attribute name="pais" type="tipoPais" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="tipoKilometraje">
+        <xsd:attribute name="km" type="tipoKm" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="tipoMarca">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="modelo" type="xsd:string" use="required"/>
+                <xsd:attribute name="year" type="tipoYear"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="tipoEntrada">
+        <xsd:attribute name="fecha" type="tipoFecha" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="tipoVehiculo">
+        <xsd:sequence>
+            <xsd:element name="entrada" type="tipoEntrada"/>
+            <xsd:element name="marca" type="tipoMarca"/>
+            <xsd:element name="kilometraje" type="tipoKilometraje" minOccurs="0"/>
+            <xsd:element name="matricula" type="tipoMatricula"/>
+            <xsd:element name="propietario" type="tipoPropietario"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="tipoTaller">
+        <xsd:sequence>
+            <xsd:element name="vehiculo" type="tipoVehiculo" minOccurs="0" maxOccurs="unbounded"/>
+
+        </xsd:sequence>
+    </xsd:complexType>    
+<!--Elemento Raíz-->
+    <xsd:element name="taller" type="tipoTaller"/>
+</xsd:schema>
