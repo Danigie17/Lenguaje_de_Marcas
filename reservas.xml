@@ -1,0 +1,35 @@
+<reservas>
+    <restaurante>
+        <nombre>Muxacho.s.l</nombre>
+        <direccion>
+            <calle>C/ loquesea</calle>
+            <ciudad>asa</ciudad>
+            <cp>56120</cp>
+            <pais>Mongolia</pais>
+        </direccion>
+        <telefono>598124555</telefono>
+    </restaurante>
+    <reserva id="R-12345678-123456" estado="pendiente">
+        <cliente>
+            <nombre>Juanito</nombre>
+            <telefono>+3485612345</telefono>
+            <email>dajshdv@gamil.com</email>
+            <tags>
+                <tag nombre="dasdsadsa"></tag>
+                <tag nombre="fboajsfbasojfbo"></tag>
+            </tags>
+        </cliente>
+        <servicio>
+
+        </servicio>
+        <mesa></mesa>
+        <pago></pago>
+        <notas></notas>
+    </reserva>
+    <reserva id="R-87654321-654321" estado="confirmada">
+        <cliente></cliente>
+        <servicio></servicio>
+        <mesa></mesa>
+    </reserva>
+    
+</reservas>
