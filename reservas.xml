@@ -19,17 +19,22 @@
                 <tag nombre="fboajsfbasojfbo"></tag>
             </tags>
         </cliente>
-        <servicio>
-
+        <servicio zona="interior">
+            <fecha>2025-03-15</fecha>
+            <hora>20:00:00</hora>
+            <personas>4</personas>
         </servicio>
-        <mesa></mesa>
-        <pago></pago>
-        <notas></notas>
+        <mesa>
+            <numero>45</numero>
+            <capacidad>4</capacidad>
+        </mesa>
+        <pago>
+            <importe moneda="EUROS">45.50</importe>
+            <metodo>Tarjeta</metodo>
+        </pago>
+        <notas>
+            <nota tipo="obligatoria" fecha="2026-05-12T:15:00:00">Contenido de la nota</nota>
+            <nota fecha="2026-05-12T15:00:00">Contenido de la nota</nota>
+        </notas>
     </reserva>
-    <reserva id="R-87654321-654321" estado="confirmada">
-        <cliente></cliente>
-        <servicio></servicio>
-        <mesa></mesa>
-    </reserva>
-    
 </reservas>

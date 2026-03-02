@@ -1,0 +1,160 @@
+<Facturae>
+   <FileHeader>
+        <SchemaVersion>3.2.2</SchemaVersion>
+        <Modality>I</Modality>
+        <invoiceIssuerType>EM</invoiceIssuerType>
+        <Batch>
+            <BatchIdentifier>FAC03736326576</BatchIdentifier>
+            <InvoicesCount>1</InvoicesCount>
+            <TotalInvoicesAmount>
+                <totalAmount>21.00</totalAmount>
+            </TotalInvoicesAmount>
+            <TotalOutstandingAmount>
+                <totalAmount>21.00</totalAmount>
+            </TotalOutstandingAmount>
+            <TotalExecutableAmount>
+                <totalAmount>21.00</totalAmount>
+            </TotalExecutableAmount>
+            <InvoiceCurrencyCode>AOA</InvoiceCurrencyCode>
+        </Batch>
+   </FileHeader>
+   <Parties>
+        <SellerParty>
+            <TaxIdentification>
+                <PersonTypeCode>J</PersonTypeCode>
+                <ResidenceTypeCode>R</ResidenceTypeCode>
+                <TaxIdentificactionNumber>654dasdad45</TaxIdentificactionNumber>
+            </TaxIdentification>
+            <LegalEntity>
+                <CorporateName>Empresa</CorporateName>
+                <AddressInSpain>
+                    <Address>Calle la que sea</Address>
+                    <PostCode>15200</PostCode>
+                    <Town>La Orotava</Town>
+                    <Province>Sta Cruz de Tenerife</Province>
+                    <CountryCode>ARG</CountryCode>
+                </AddressInSpain>
+                <OverseasAddress>
+                    <Adress>C/ la que sea num 8</Adress>
+                    <PostCodeAndTown>Unaahi13502</PostCodeAndTown>
+                    <Province>Provinvia</Province>
+                    <CountryCode>AFG</CountryCode>
+                </OverseasAddress>
+            </LegalEntity>
+            <Individual>
+                <Name>Pepe</Name>
+                <FirstSurname>Rodriguez</FirstSurname>
+                <AddressInSpain>
+                    <Address>Calle la que sea</Address>
+                    <PostCode>15200</PostCode>
+                    <Town>La Orotava</Town>
+                    <Province>Sta Cruz de Tenerife</Province>
+                    <CountryCode>ARG</CountryCode>
+                </AddressInSpain>
+                <OverseasAddress>
+                    <Adress>C/ la que sea num 8</Adress>
+                    <PostCodeAndTown>Unaahi13502</PostCodeAndTown>
+                    <Province>Provinvia</Province>
+                    <CountryCode>AFG</CountryCode>
+                </OverseasAddress>
+            </Individual>
+        </SellerParty>
+        <BuyerParty>
+            <TaxIdentification>
+                <PersonTypeCode>J</PersonTypeCode>
+                <ResidenceTypeCode>R</ResidenceTypeCode>
+                <TaxIdentificactionNumber>654dasdad45</TaxIdentificactionNumber>
+            </TaxIdentification>
+            <LegalEntity>
+                <CorporateName>Empresa</CorporateName>
+                <AddressInSpain>
+                    <Address>Calle la que sea</Address>
+                    <PostCode>15200</PostCode>
+                    <Town>La Orotava</Town>
+                    <Province>Sta Cruz de Tenerife</Province>
+                    <CountryCode>ARG</CountryCode>
+                </AddressInSpain>
+                <OverseasAddress>
+                    <Adress>C/ la que sea num 8</Adress>
+                    <PostCodeAndTown>Unaahi13502</PostCodeAndTown>
+                    <Province>Provinvia</Province>
+                    <CountryCode>AFG</CountryCode>
+                </OverseasAddress>
+            </LegalEntity>
+            <Individual>
+                <Name>Pepe</Name>
+                <FirstSurname>Rodriguez</FirstSurname>
+                <AddressInSpain>
+                    <Address>Calle la que sea</Address>
+                    <PostCode>15200</PostCode>
+                    <Town>La Orotava</Town>
+                    <Province>Sta Cruz de Tenerife</Province>
+                    <CountryCode>ARG</CountryCode>
+                </AddressInSpain>
+                <OverseasAddress>
+                    <Adress>C/ la que sea num 8</Adress>
+                    <PostCodeAndTown>Unaahi13502</PostCodeAndTown>
+                    <Province>Provinvia</Province>
+                    <CountryCode>AFG</CountryCode>
+                </OverseasAddress>
+            </Individual>
+        </BuyerParty>
+   </Parties>
+   <Invoices>
+        <Invoice>
+            <InvoiceHeader>
+                <InvoiceNumber>465453435</InvoiceNumber>
+                <InvoiceDocumentType>FC</InvoiceDocumentType>
+                <InvoiceClass>OR</InvoiceClass>
+            </InvoiceHeader>
+            <InvoiceIssueData>
+                <IssueDate>2026-02-15</IssueDate>
+                <InvoiceCurrencyCode>AFN</InvoiceCurrencyCode>
+                <TaxCurrencyCode>AFN</TaxCurrencyCode>
+                <LanguageName>ar</LanguageName>
+            </InvoiceIssueData>
+            <TaxesOutputs>
+                <Tax>
+                    <TaxTypeCode>02</TaxTypeCode>
+                    <TaxRate>15.2</TaxRate>
+                    <TaxableBase>2.5</TaxableBase>
+                </Tax>
+            </TaxesOutputs>
+            <Tax>
+                <TaxTypeCode>02</TaxTypeCode>
+                <TaxRate>15.2</TaxRate>
+                <TaxableBase>2.5</TaxableBase>
+            </Tax>
+            <InvoiceTotals>
+                <TotalGrossAmount>1235.25</TotalGrossAmount>
+                <TotalGrossAmountBeforeTaxes>158468.16</TotalGrossAmountBeforeTaxes>
+                <TotalTaxOutputs>615.25</TotalTaxOutputs>
+                <TotalTaxesWithheld>4564.35</TotalTaxesWithheld>
+                <InvoiceTotal>4564.45</InvoiceTotal>
+                <TotalOutstandingAmount>785.96</TotalOutstandingAmount>
+                <TotalExecutableAmount>698.12</TotalExecutableAmount>
+            </InvoiceTotals>
+            <Items>
+                <InvoiceLine>
+                    <ItemDescription>dsdbhsjadbhj</ItemDescription>
+                    <Quantity>45</Quantity>
+                    <UnitPriceWithoutTax>465.96</UnitPriceWithoutTax>
+                    <TotalCost>4561.12</TotalCost>
+                    <GrossAmount>123.74</GrossAmount>
+                    <TaxesOutputs>
+                        <Tax>
+                            <TaxTypeCode>02</TaxTypeCode>
+                            <TaxRate>15.2</TaxRate>
+                            <TaxableBase>2.5</TaxableBase>
+                        </Tax>
+                    </TaxesOutputs>
+                    <Tax>
+                        <TaxTypeCode>02</TaxTypeCode>
+                        <TaxRate>15.2</TaxRate>
+                        <TaxableBase>2.5</TaxableBase>
+                    </Tax>
+                </InvoiceLine>
+            </Items>
+        </Invoice>
+   </Invoices> 
+</Facturae>
