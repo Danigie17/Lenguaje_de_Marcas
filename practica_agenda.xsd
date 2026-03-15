@@ -6,9 +6,9 @@
         </xsd:restriction>
     </xsd:simpleType>
         <xsd:simpleType name="tipoEmail">
-        <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*@[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*"/>
-        </xsd:restriction>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*@[a-z]+((\.[a-z0-9]+)*[a-z0-9_-]*)*"/>
+            </xsd:restriction>
     </xsd:simpleType>
 
 <!--Tipos Complejos-->

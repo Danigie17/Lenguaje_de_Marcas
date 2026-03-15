@@ -1,56 +1,45 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<!--Tipos Simples-->
-<xsd:simpleType name="tipoIssn">
+
+<xsd:simpleType name="tipoGenero">
     <xsd:restriction base="xsd:string">
-        <xsd:pattern value="[0-9]-[0-9]"/>
+        <xsd:enumeration value="accion"/>
+        <xsd:enumeration value="drama"/>
+        <xsd:enumeration value="comedia"/>
+        <xsd:enumeration value="ciencia_ficcion"/>
     </xsd:restriction>
 </xsd:simpleType>
-<xsd:simpleType name="tipoIsbn">
-    <xsd:restriction base="xsd:string">
-        <xsd:pattern value="[0-9]-[0-9]-[0-9]-[0-9]-[0-9]"/>
-    </xsd:restriction>
-</xsd:simpleType>
-<xsd:simpleType name="tipoNacionalidad">
-    <xsd:restriction base="xsd:string">
-        <xsd:enumeration value="ES"/>
-        <xsd:enumeration value="US"/>
-    </xsd:restriction>
-</xsd:simpleType>
-<xsd:simpleType name="tipoMoneda">
-    <xsd:restriction base="xsd:string">
-        <xsd:enumeration value="EUR"/>
-        <xsd:enumeration value="USD"/>
-    </xsd:restriction>
-</xsd:simpleType>
-<!--Tipos Complejos-->
-<xsd:complexType name="tipoRevista">
-    <xsd:elementº name="titulo" type="xsd:string"/>
-    <xsd:sequence name="numero" type="xsd:integer"/>
-    <xsd:sequence name="mes" type="xsd:string"/>
-    <xsd:sequence name="aino" type="xsd:integer"/>
-    <xsd:attribute name="issn" type="tipoIssn" use="required"/>
+
+<xsd:complexType name="tipoActor">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+            <xsd:attribute name="edad" type="xsd:integer" use="required"/>
+        </xsd:extension>
+    </xsd:simpleContent>
 </xsd:complexType>
-<xsd:complexType name="tipoCategorias">
-    <xsd:element name="categoria" type="xsd:string" maxOccurs="unbounded"/>
+
+<xsd:complexType name="tipoReparto">
+    <xsd:sequence>
+        <xsd:element name="actor" type="tipoActor" maxOccurs="unbounded"/>
+    </xsd:sequence>
 </xsd:complexType>
-<xsd:complexType name="tipoPrecio">
-    <xsd:attribute name="moneda" type="tipoMoneda" use="required"/>
+
+<xsd:complexType name="tipoPelicula">
+    <xsd:sequence>
+        <xsd:element name="titulo" type="xsd:string"/>
+        <xsd:element name="director" type="xsd:string"/>
+        <xsd:element name="anio" type="xsd:integer"/>
+        <xsd:element name="genero" type="tipoGenero"/>
+        <xsd:element name="reparto" type="tipoReparto"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
 </xsd:complexType>
-<xsd:complexType name="tipoAutor">
-    <xsd:attribute name="nacionalidad" type="tipoNacionalidad" use="required"/>
+
+<xsd:complexType name="tipoCatalogo">
+    <xsd:sequence>
+        <xsd:element name="pelicula" type="tipoPelicula" maxOccurs="unbounded"/>
+    </xsd:sequence>
 </xsd:complexType>
-<xsd:complexType name="tipoLibro">
-    <xsd:sequence name="titulo" type="xsd:string"/>
-    <xsd:sequence name="autor" type="tipoAutor"/>
-    <xsd:sequence name="anio" type="xsd:integer"/>
-    <xsd:sequence name="precio" type="tipoPrecio"/>
-    <xsd:sequence name="categorias" type="tipoCategorias"/>
-    <xsd:attribute name="isbn" type="tipoIsbn" use="required"/>
-</xsd:complexType>
-<xsd:complexType name="tipoBiblioteca">
-    <xsd:sequence name="libro" type="tipoLibro"/>
-    <xsd:sequence name="revista" type="tipoRevista"/>
-</xsd:complexType>
-<!--Elemento Raíz-->
-<xsd:element name="biblioteca" type="tipoBiblioteca"/>
+
+<xsd:element name="catalogo" type="tipoCatalogo"/>
+
 </xsd:schema>

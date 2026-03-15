@@ -1,30 +1,12 @@
-<biblioteca>
-    <libro isbn="978-84-376-0494-7">
-        <titulo>La sombra del viento</titulo>
-        <autor nacionalidad="ES">Carlos Ruiz Zafón</autor>
-        <anio>2001</anio>
-        <precio moneda="EUR">19.50</precio>
-        <categorias>
-            <categoria>Novela</categoria>
-            <categoria>Misterio</categoria>
-        </categorias>
-    </libro>
-
-    <libro isbn="978-0-7432-7356-5">
-        <titulo>The Da Vinci Code</titulo>
-        <autor nacionalidad="US">Dan Brown</autor>
-        <anio>2003</anio>
-        <precio moneda="USD">15.99</precio>
-        <categorias>
-            <categoria>Thriller</categoria>
-            <categoria>Misterio</categoria>
-        </categorias>
-    </libro>
-
-    <revista issn="1134-6582">
-        <titulo>Muy Interesante</titulo>
-        <numero>425</numero>
-        <mes>Marzo</mes>
-        <anio>2024</anio>
-    </revista>
-</biblioteca>
+<academia>
+    <curso codigo="CUR-432" modalidad="presencial">
+        <titulo>Lengua</titulo>
+        <profesor experiencia="10">Manolo</profesor>
+        <alumnos>
+            <alumno matricula="faifbdsufbjs">
+                <nombre>Manu</nombre>
+                <email>dasdas@gmail.com</email>
+            </alumno>
+        </alumnos>
+    </curso>
+</academia>
