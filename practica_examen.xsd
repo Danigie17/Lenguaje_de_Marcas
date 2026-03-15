@@ -1,22 +1,56 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!--Tipos Simples-->
-    <xsd:simpleType name="tipoIsbn">
-        <xsd:restriction base="xsd:integer">
-            <xsd:pattern value="[0-9]{9}"/>
-        </xsd:restriction>
-    </xsd:simpleType>
-    <!--Tipos Complejos-->
-    <xsd:complexType name="tipoLibro">
-        <xsd:attribute name="isbn" type="tipoIsbn" use="required"/>
-    </xsd:complexType>
-    <xsd:complexType name="tipoBiblioteca">
-        <xsd:sequence>
-            <xsd:element name="libro" type="tipoLibro"/>
-            <xsd:element name="titulo" type="xsd:string"/>
-            <xsd:element name="autor" type="xsd:string"/>
-            <xsd:element name="paginas" type="xsd:integer"/>
-        </xsd:sequence>
-    </xsd:complexType>
-    <!--Elemento Raíz-->
-    <xsd:element name="biblioteca" type="tipoBiblioteca"/>
+<!--Tipos Simples-->
+<xsd:simpleType name="tipoIssn">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[0-9]-[0-9]"/>
+    </xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="tipoIsbn">
+    <xsd:restriction base="xsd:string">
+        <xsd:pattern value="[0-9]-[0-9]-[0-9]-[0-9]-[0-9]"/>
+    </xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="tipoNacionalidad">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="ES"/>
+        <xsd:enumeration value="US"/>
+    </xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="tipoMoneda">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="EUR"/>
+        <xsd:enumeration value="USD"/>
+    </xsd:restriction>
+</xsd:simpleType>
+<!--Tipos Complejos-->
+<xsd:complexType name="tipoRevista">
+    <xsd:elementº name="titulo" type="xsd:string"/>
+    <xsd:sequence name="numero" type="xsd:integer"/>
+    <xsd:sequence name="mes" type="xsd:string"/>
+    <xsd:sequence name="aino" type="xsd:integer"/>
+    <xsd:attribute name="issn" type="tipoIssn" use="required"/>
+</xsd:complexType>
+<xsd:complexType name="tipoCategorias">
+    <xsd:element name="categoria" type="xsd:string" maxOccurs="unbounded"/>
+</xsd:complexType>
+<xsd:complexType name="tipoPrecio">
+    <xsd:attribute name="moneda" type="tipoMoneda" use="required"/>
+</xsd:complexType>
+<xsd:complexType name="tipoAutor">
+    <xsd:attribute name="nacionalidad" type="tipoNacionalidad" use="required"/>
+</xsd:complexType>
+<xsd:complexType name="tipoLibro">
+    <xsd:sequence name="titulo" type="xsd:string"/>
+    <xsd:sequence name="autor" type="tipoAutor"/>
+    <xsd:sequence name="anio" type="xsd:integer"/>
+    <xsd:sequence name="precio" type="tipoPrecio"/>
+    <xsd:sequence name="categorias" type="tipoCategorias"/>
+    <xsd:attribute name="isbn" type="tipoIsbn" use="required"/>
+</xsd:complexType>
+<xsd:complexType name="tipoBiblioteca">
+    <xsd:sequence name="libro" type="tipoLibro"/>
+    <xsd:sequence name="revista" type="tipoRevista"/>
+</xsd:complexType>
+<!--Elemento Raíz-->
+<xsd:element name="biblioteca" type="tipoBiblioteca"/>
 </xsd:schema>
