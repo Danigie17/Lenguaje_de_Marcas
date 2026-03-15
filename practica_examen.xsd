@@ -1,0 +1,22 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--Tipos Simples-->
+    <xsd:simpleType name="tipoIsbn">
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="[0-9]{9}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!--Tipos Complejos-->
+    <xsd:complexType name="tipoLibro">
+        <xsd:attribute name="isbn" type="tipoIsbn" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="tipoBiblioteca">
+        <xsd:sequence>
+            <xsd:element name="libro" type="tipoLibro"/>
+            <xsd:element name="titulo" type="xsd:string"/>
+            <xsd:element name="autor" type="xsd:string"/>
+            <xsd:element name="paginas" type="xsd:integer"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--Elemento Raíz-->
+    <xsd:element name="biblioteca" type="tipoBiblioteca"/>
+</xsd:schema>
