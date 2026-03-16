@@ -1,0 +1,146 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--Tipos Simples-->
+    <xsd:simpleType name="tipoNivel">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="basico"/>
+            <xsd:enumeration value="intermedio"/>
+            <xsd:enumeration value="avanzado"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoDuracion">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="30"/>
+            <xsd:maxInclusive value="240"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoModalidad">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="presencial"/>
+            <xsd:enumeration value="online"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoCodigoActividad">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="ACT-[0-9]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoWeb">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="http[s]?://.+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoNumero">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="200"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoPabellon">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="A"/>
+            <xsd:enumeration value="B"/>
+            <xsd:enumeration value="C"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoTipo">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="general"/>
+            <xsd:enumeration value="ventas"/>
+            <xsd:enumeration value="soporte"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoEmpleados">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="5000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoSector">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="IA"/>
+            <xsd:enumeration value="Robotica"/>
+            <xsd:enumeration value="Ciberseguridad"/>
+            <xsd:enumeration value="Telecomunicaciones"/>
+            <xsd:enumeration value="Software"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoIdExpositor">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="E[0-9]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoEdicion">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="50"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoCiudad">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Madrid"/>
+            <xsd:enumeration value="Barcelona"/>
+            <xsd:enumeration value="Valencia"/>
+            <xsd:enumeration value="Sevilla"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="tipoCodigo">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z]{3}-[0-9]{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+<!--Tipos Complejos-->
+    <xsd:complexType name="tipoActividad">
+        <xsd:sequence>
+            <xsd:element name="titulo" type="xsd:string"/>
+            <xsd:element name="ponente" type="xsd:string"/>
+            <xsd:element name="duracion" type="tipoDuracion"/>
+            <xsd:element name="nivel" type="tipoNivel"/>
+            <xsd:element name="sala" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="codigoActividad" type="tipoCodigoActividad" use="required"/>
+        <xsd:attribute name="modalidad" type="tipoModalidad" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoStand">
+        <xsd:attribute name="pabellon" type="tipoPabellon" use="required"/>
+        <xsd:attribute name="numero" type="tipoNumero" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="tipoContacto">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="tipo" type="tipoTipo" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="tipoExpositor">
+        <xsd:sequence>
+            <xsd:element name="nombreEmpresa" type="xsd:string"/>
+            <xsd:element name="sector" type="tipoSector"/>
+            <xsd:element name="empleados" type="tipoEmpleados"/>
+            <xsd:element name="contacto" type="tipoContacto"/>
+            <xsd:element name="stand" type="tipoStand" maxOccurs="3"/>
+            <xsd:element name="web" type="tipoWeb" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="idExpositor" type="tipoIdExpositor" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="tipoDatosGenerales">
+        <xsd:sequence>
+            <xsd:element name="nombre" type="xsd:string"/>
+            <xsd:element name="ciudad" type="tipoCiudad"/>
+            <xsd:element name="fechaInicio" type="xsd:date"/>
+            <xsd:element name="fechaFin" type="xsd:date"/>
+        </xsd:sequence>
+        <xsd:attribute name="codigo" type="tipoCodigo" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="tipoFeria">
+        <xsd:sequence>
+            <xsd:element name="datosGenerales" type="tipoDatosGenerales"/>
+            <xsd:element name="expositor" type="tipoExpositor" maxOccurs="unbounded"/>
+            <xsd:element name="actividad" type="tipoActividad" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="edicion" type="tipoEdicion" use="required"/>
+    </xsd:complexType>
+<!--Elemento Raíz-->
+    <xsd:element name="feria" type="tipoFeria"/>
+</xsd:schema>

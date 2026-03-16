@@ -1,0 +1,70 @@
+<tiendaOnline>
+    <cliente>
+        <nombre>Manolo</nombre>
+        <direccion>
+            <via>calle</via>
+            <nombreVia>unacualquiera</nombreVia>
+            <numero>5</numero>
+            <municipio CP="38300">La Orotava</municipio>
+            <provincia>Sta Cruz de Tenerife</provincia>
+        </direccion>
+        <contacto>
+            <email uso="trabajo">unoahi@gmail.com</email>
+            <telefonos>
+                <movil>645759611</movil>
+            </telefonos>
+        </contacto>
+        <pedido idPedido="dsb">
+            <producto>
+                <nombre>papel</nombre>
+                <precio moneda="EUR">5.50</precio>
+                <cantidad>5</cantidad>
+            </producto>
+            <estado>enviado</estado>
+            <total moneda="EUR">30.00</total>
+        </pedido>
+        <pedido idPedido="abc">
+            <producto>
+                <nombre>lija</nombre>
+                <precio moneda="EUR">7.50</precio>
+                <cantidad>50</cantidad>
+            </producto>
+            <estado>pendiente</estado>
+            <total moneda="EUR">300.00</total>
+        </pedido>
+    </cliente>
+    <proveedor>
+        <nombre>Juan</nombre>
+        <direccion>
+            <via>plaza</via>
+            <nombreVia>unacualquiera</nombreVia>
+            <numero>9</numero>
+            <municipio CP="38300">La Orotava</municipio>
+            <provincia>Sta Cruz de Tenerife</provincia>
+        </direccion>
+        <contacto>
+            <email uso="trabajo">unoahi@gmail.com</email>
+            <telefonos>
+                <movil>645759611</movil>
+            </telefonos>
+        </contacto>
+        <pedido idPedido="dsb">
+            <producto>
+                <nombre>papel</nombre>
+                <precio moneda="EUR">5.50</precio>
+                <cantidad>5</cantidad>
+            </producto>
+            <estado>enviado</estado>
+            <total moneda="EUR">30.00</total>
+        </pedido>
+        <pedido idPedido="abc">
+            <producto>
+                <nombre>lija</nombre>
+                <precio moneda="EUR">7.50</precio>
+                <cantidad>50</cantidad>
+            </producto>
+            <estado>pendiente</estado>
+            <total moneda="EUR">300.00</total>
+        </pedido>
+    </proveedor>
+</tiendaOnline>
