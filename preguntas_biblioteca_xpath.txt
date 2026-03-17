@@ -1,0 +1,122 @@
+Búsquedas XPath
+1
+
+1. Todos los libros.
+
+//biblioteca/libro
+
+2. Todos los tÃ­tulos de los libros.
+
+//biblioteca/libro/titulo/text()
+
+3. Todos los autores.
+
+//autor
+
+4. Todos los tÃ­tulos de la biblioteca (libros y revistas).
+
+//titulo
+
+5. El libro cuyo id es L1.
+
+//libro[@id="L1"]
+
+6. El tÃ­tulo del libro con id L2.
+
+//libro[@id="L2"]/titulo
+
+7. Los libros publicados despuÃ©s del aÃ±o 1900.
+
+//libro[anio > 1900]
+
+8. Los libros cuyo precio sea mayor que 20.
+
+//libro[precio > 20]
+
+9. Los tÃ­tulos de los libros cuyo precio sea mayor que 20.
+
+//libro[precio > 20]/titulo
+
+10. Todos los elementos que tengan atributo moneda.
+
+//*[@moneda]
+
+11. Todos los precios.
+
+//precio
+
+12. Todos los precios cuya moneda sea EUR.
+
+//precio[@moneda="EUR"]
+
+13. El primer libro de la biblioteca.
+
+/biblioteca/libro[1]
+
+14. El Ãºltimo libro de la biblioteca.
+
+/biblioteca/libro[last()]
+
+15. El segundo libro.
+
+/biblioteca/libro[2]
+
+16. Todos los libros cuya categorÃ­a sea Novela.
+
+/biblioteca/libro[categoria="Novela"]
+
+17. Los tÃ­tulos de los libros cuya categorÃ­a sea Misterio.
+
+/biblioteca/libro[categoria="Misterio"]
+
+18. El autor del libro El Quijote.
+
+/biblioteca/libro[titulo="El Quijote"]/autor
+
+19. Los libros publicados antes del aÃ±o 2000.
+
+//libro[anio < 2000]
+
+20. Los tÃ­tulos de las revistas.
+
+//revista/titulo
+
+21. La revista publicada en el mes Febrero.
+
+//revista[mes="Febrero"]
+
+22. El precio de la revista Muy Interesante.
+
+//revista[titulo="Muy Interesante"]/precio
+
+23. Todos los elementos titulo que estÃ©n dentro de libro.
+
+/biblioteca/libro//titulo
+
+24. Todos los nodos hijos de biblioteca.
+
+
+
+25. Todos los nodos descendientes de biblioteca.
+
+
+
+26. Los libros cuyo precio sea menor que 20.
+
+//libro[precio < 20]
+
+27. Los tÃ­tulos de libros escritos por Carlos Ruiz ZafÃ³n.
+
+//libro[autor="Carlos Ruiz Zafón"]/titulo
+
+28. Los elementos que tengan atributo id.
+
+//*[@id]
+
+29. Los libros cuyo tÃ­tulo contenga la palabra "sombra".
+
+//libro[contains(titulo, "sombra")]
+
+30. El aÃ±o de publicaciÃ³n del Ãºltimo libro.
+
+//libro[last()]/anio
