@@ -9,7 +9,7 @@
         </direccion>
         <telefono>598124555</telefono>
     </restaurante>
-    <reserva id="R-12345678-123456" estado="pendiente">
+    <reserva id="R-12345678-123456" estado="confirmada">
         <cliente>
             <nombre>Juanito</nombre>
             <telefono>+3485612345</telefono>

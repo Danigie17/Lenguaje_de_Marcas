@@ -1,5 +1,4 @@
 Búsquedas XPath
-1
 
 1. Todos los libros.
 
@@ -95,11 +94,11 @@ Búsquedas XPath
 
 24. Todos los nodos hijos de biblioteca.
 
-
+/biblioteca
 
 25. Todos los nodos descendientes de biblioteca.
 
-
+/biblioteca//*
 
 26. Los libros cuyo precio sea menor que 20.
 

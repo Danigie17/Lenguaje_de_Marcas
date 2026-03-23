@@ -1,0 +1,55 @@
+<reservas>
+<restaurante>
+<nombre>Muxacho,s.l.</nombre>
+<direccion>
+<calle>C./El Medio de tó,123</calle>
+<ciudad>Puerto de la Cruz</ciudad>
+<cp>38400</cp>
+<pais>España</pais>
+</direccion>
+<telefono>922922922</telefono>
+</restaurante>
+<reserva id="R-87654321-654321" estado="pendiente">
+<cliente>
+<nombre>Ana González Gutiérrez</nombre>
+<telefono>922562123</telefono>
+</cliente>
+<servicio>
+<fecha>2026-03-06</fecha>
+<hora>21:00:00</hora>
+<personas>4</personas>
+</servicio>
+<mesa>
+<numero>300</numero>
+<capacidad>4</capacidad>
+</mesa>
+</reserva>
+<reserva id="R-12345678-123456" estado="confirmada">
+<cliente>
+<nombre>Juan de la Cierva</nombre>
+<telefono>+3487112636</telefono>
+<email>juanito@gmail.com</email>
+<tags>
+<tag nombre="Pues lo que yo quiera"/>
+<tag nombre="En un lugar de la Mancha..."/>
+</tags>
+</cliente>
+<servicio zona="terraza">
+<fecha>2026-03-02</fecha>
+<hora>20:00:00</hora>
+<personas>2</personas>
+</servicio>
+<mesa>
+<numero>307</numero>
+<capacidad>4</capacidad>
+</mesa>
+<pago>
+<importe moneda="EUROS">110.00</importe>
+<metodo>Con tarjeta</metodo>
+</pago>
+<notas>
+<nota tipo="obligatoria">Esto es libre</nota>
+<nota tipo="obkl" fecha="2026-03-02T15:00:23">12339,.332</nota>
+</notas>
+</reserva>
+</reservas>
