@@ -70,7 +70,7 @@
 </tr>
 
 <!-- XSD: InvoiceLine (repetible) -->
-<xsl:for-each select="/Items/InvoiceLine">
+<xsl:for-each select="//InvoiceLine">
     <tr>
         <td><!-- XSD: ItemDescription --><xsl:value-of select="ItemDescription"/></td>
         <td><!-- XSD: Quantity --><xsl:value-of select="Quantity"/></td>
